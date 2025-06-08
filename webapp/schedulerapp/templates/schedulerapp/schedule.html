@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Schedule</title>
+</head>
+<body>
+    <h1>Shift Schedule</h1>
+    <table border="1">
+        <tr><th>Start</th><th>Duration</th><th>Employee</th></tr>
+        {% for shift in shifts %}
+        <tr>
+            <td>{{ shift.start }}</td>
+            <td>{{ shift.duration }}</td>
+            <td>{{ shift.assigned_to.name if shift.assigned_to else '' }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
